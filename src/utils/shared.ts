@@ -26,15 +26,9 @@ const shared = {
     }
 
     // Handle query parameters: append as query string
-    if (
-      query &&
-      typeof query === Enum.DataType.Object &&
-      Object.keys(query).length > 0
-    ) {
+    if (query && typeof query === Enum.DataType.Object && Object.keys(query).length > 0) {
       const cleanedQuery = Object.fromEntries(
-        Object.entries(query).filter(
-          ([_, value]) => value !== '' && value != null,
-        ),
+        Object.entries(query).filter(([_, value]) => value !== '' && value != null),
       );
 
       const queryString = qs.stringify(cleanedQuery, {
@@ -48,10 +42,7 @@ const shared = {
 
     return url;
   },
-  parseApiEndpoint: (
-    endPoint: string,
-    parameters?: IEndPointParameter,
-  ): string => {
+  parseApiEndpoint: (endPoint: string, parameters?: IEndPointParameter): string => {
     if (!parameters) {
       return endPoint;
     }
@@ -74,13 +65,23 @@ const shared = {
 
       const parameter = parameters?.[parameterMatch];
 
-      newEndPoint = newEndPoint.replace(
-        keyMatch,
-        parameter ? parameter.toString() : keyMatch,
-      );
+      newEndPoint = newEndPoint.replace(keyMatch, parameter ? parameter.toString() : keyMatch);
     }
 
     return newEndPoint;
+  },
+  getAvatarName: (fullName: string): string => {
+    if (!fullName) return '';
+
+    const nameParts = fullName.trim().split(' ');
+    if (nameParts.length >= 2) {
+      const firstNameInitial = nameParts[0][0].toUpperCase();
+      const lastNameInitial = nameParts[1][0].toUpperCase();
+
+      return `${firstNameInitial}${lastNameInitial}`;
+    }
+
+    return nameParts[0][0].toUpperCase() + (nameParts[0][1] ? nameParts[0][1].toUpperCase() : '');
   },
 };
 

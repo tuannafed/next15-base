@@ -1,0 +1,29 @@
+{
+  "Common": {
+    "metadata": {
+      "template": "{page}",
+      "notFoundTitle": "Page not found",
+      "loginTitle": "Login",
+      "homeTitle": "Home",
+      "dashboardTitle": "Dashboard",
+      "userTitle": "User"
+    },
+    "header": {
+      "back": "Back"
+    },
+    "footer": {
+      "copyRight": "Copyright",
+      "public": {
+        "description": "This is a public site",
+        "copyRight": "Copyright "
+      }
+    },
+    "menu": {},
+    "pagination": {},
+    "button": {}
+  },
+  "HomePage": {
+    "title": "Home",
+    "description": "This is the home page"
+  }
+}

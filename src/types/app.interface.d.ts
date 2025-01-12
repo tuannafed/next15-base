@@ -1,5 +1,6 @@
 // app.interface.d.ts
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 interface IOption<T = any> {
   label: string;
   value: T;

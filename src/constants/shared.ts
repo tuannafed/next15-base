@@ -1,25 +1,37 @@
 const shared = {
   APP: {
     NAME: 'Web application',
+    DESCRIPTION: 'Web application description',
+    AUTHOR: 'Develop Team',
+    KEYWORDS: [
+      'web',
+      'application',
+      'description',
+      'Nextjs',
+      'React',
+      'TypeScript',
+      'TailwindCSS',
+      'Shadcn',
+    ],
     URL: process.env.NEXT_PUBLIC_APP_URL || '',
     LOADING: 'app-loading',
     TIME_ZONE: process.env.TIME_ZONE || 'UTC',
-    AUTHOR: 'Develop Team',
   },
   API: {
     BASE_URL: process.env.NEXT_PUBLIC_API_URL || '',
     TIMEOUT: 30000,
   },
   ENV: {
+    DEFAULT: process.env.NODE_ENV || '',
     DEVELOPMENT: 'development',
     PRODUCTION: 'production',
   },
   API_REQUEST_METHODS: {
-    GET: 'get',
-    POST: 'post',
-    PUT: 'put',
-    DELETE: 'delete',
-    PATCH: 'patch',
+    GET: 'GET',
+    POST: 'POST',
+    PUT: 'PUT',
+    DELETE: 'DELETE',
+    PATCH: 'PATCH',
   },
   REGEX_PATTERNS: {
     EMAIL: /^(?!.*\.\.)(?!\.)(?!.*\.$)[^\s@][^\s@]*(?<!\.)@[^\s@]+\.[^\s@]+$/,
@@ -37,6 +49,7 @@ const shared = {
   PAGINATION: {
     DEFAULT_PAGE: 1,
     DEFAULT_PER_PAGE: 10,
+    DEFAULT_PAGE_SIZE: 10,
     DEFAULT_PAGE_SIZES: [10, 30, 50, 100],
   },
   LOCAL_STORAGE_KEYS: {

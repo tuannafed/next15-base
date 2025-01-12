@@ -8,22 +8,29 @@ type TRowAction = 'edit' | 'detail' | 'create' | 'delete' | 'cancel';
 
 type TDate = string | number | Date;
 type TAPIConfig = {
-  keys: string[];
-  endPoint: string;
+  url: string;
   method: TMethod;
   accessToken?: boolean;
-  factoryData?: object;
 };
 
-type TApiError = {
-  input: string | null;
-  msg: string;
-  type: string;
-  loc: string[];
+type TApiError<T = any> = {
+  [key: string]: T;
 };
 
 type TApiResponseBase<T = any> = {
-  data: T | { errors: TApiError[] };
-  code: string;
-  msg: string;
+  data: T;
+  statusCode: number;
+  success: boolean;
+  message: string;
+  messageCode: string;
+  messageErrors: string;
+};
+
+type TBaseState = {
+  loading: TLoading;
+  error?: any;
+  requestId?: string;
+  isSuccess?: boolean;
+  isError?: boolean;
+  isFetching?: boolean;
 };

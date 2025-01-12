@@ -1,14 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import constants from '@/constants';
+import { axiosService } from '@/lib';
 import type { NextAuthConfig } from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
-
-import { HTTP_STATUS_CODE } from '@/constants/httpCode';
-import type { TLoginReq } from '@/schemas/signin/request';
-import { LoginReq } from '@/schemas/signin/request';
-import { LoginRes } from '@/schemas/signin/response';
-import { postSigninApi } from '@/services/api/authentication';
-import { fetchClientSide } from '@/utils';
 
 const authConfig = {
   providers: [
@@ -19,28 +13,31 @@ const authConfig = {
     CredentialProvider({
       name: 'credentials',
       credentials: {
-        email: { type: 'email' },
+        username: { type: 'text' },
         password: { type: 'password' },
       },
       authorize: async (credentials) => {
-        if (!credentials.email || !credentials.password) return null;
+        if (!credentials.username || !credentials.password) return null;
 
-        const res = await fetchClientSide({
-          apiConfig: postSigninApi,
-          requestSchema: LoginReq,
-          responseSchema: LoginRes,
-          payload: credentials as TLoginReq,
+        const url = constants.shared.API.BASE_URL + constants.routeApis.AUTH.LOGIN;
+
+        const response = await axiosService({
+          url,
+          method: constants.shared.API_REQUEST_METHODS.POST,
+          data: {
+            username: credentials.username,
+            password: credentials.password,
+            expiresInMins: 30,
+          },
         });
 
-        if (res.code !== HTTP_STATUS_CODE.OK || !res.data) return null;
-
-        const { user, ...rest } = res.data;
+        if (!response) return null;
 
         return {
-          id: `${user.id}`,
-          email: user.email,
-          name: user.email.split('@')[0],
-          user: { ...rest, ...user, name: user.email.split('@')[0] },
+          id: '1',
+          name: 'Test User',
+          email: 'test@gmail.com',
+          image: 'https://www.gravatar.com/avatar/',
         };
       },
     }),
@@ -61,13 +58,17 @@ const authConfig = {
 
     async session({ token, session }) {
       if (session.user) {
-        (session.user as any) = token.user;
+        session.user = token.user;
       }
 
       return session;
     },
   },
   session: { strategy: 'jwt' },
+  pages: {
+    signIn: '/login',
+    error: '/error',
+  },
 } satisfies NextAuthConfig;
 
 export default authConfig;
