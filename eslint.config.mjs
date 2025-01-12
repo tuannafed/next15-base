@@ -1,4 +1,5 @@
 import { dirname } from 'path';
+import js from '@eslint/js';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -7,14 +8,21 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...compat.config({
+    extends: ['eslint:recommended', 'next/core-web-vitals', 'next/typescript', 'next', 'prettier'],
+  }),
   {
     rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      'react/jsx-no-literals': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-empty-interface': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'error',
         {
@@ -52,8 +60,7 @@ const eslintConfig = [
     },
   },
   {
-    // Define patterns to ignore
-    ignores: ['**/node_modules/**', '**/.next/**', 'commitlint.config.js'],
+    ignores: ['.next/**', 'node_modules/**', '*.config.{ts,js,cjs,mjs}'],
   },
 ];
 

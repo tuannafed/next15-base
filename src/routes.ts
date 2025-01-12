@@ -3,20 +3,14 @@
  * These routes do not require authentication
  * @type {string[]}
  */
-export const publicRoutes = ['/'];
+export const PUBLIC_ROUTES = ['/', '/demo-component-shared', '/demo-component-ui'];
 
 /**
  * An array of routes that are used for authentication
  * These routes will redirect logged in users to /settings
  * @type {string[]}
  */
-export const authRoutes = [
-  '/login',
-  '/register',
-  '/error',
-  '/reset',
-  '/new-password',
-];
+export const AUTH_ROUTES = ['/login', '/register', '/error', '/reset', '/new-password'];
 
 /**
  * An array of routes that are accessible to authenticated users
@@ -24,6 +18,7 @@ export const authRoutes = [
  * @type {string[]}
  */
 // export const privateRoutes = [""]; All routes are private by default, is defined the middleware.ts
+export const privateRoutes = ['/dashboard'];
 
 /**
  * The prefix for API authentication routes
@@ -37,3 +32,4 @@ export const apiAuthPrefix = '/api/auth';
  * @type {string}
  */
 export const DEFAULT_LOGIN_REDIRECT = '/dashboard';
+export const DEFAULT_LOGOUT_REDIRECT = '/login';
