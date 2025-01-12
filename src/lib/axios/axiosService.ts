@@ -1,8 +1,8 @@
-/* eslint-disable no-useless-catch */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { AxiosResponse } from 'axios';
-import { axiosInstance } from './axiosInstance';
+
 import type { AxiosRequestConfigWithToken } from './axiosInstance';
+import { axiosInstance } from './axiosInstance';
 
 /**
  * Helper function to make API calls using axiosInstance.

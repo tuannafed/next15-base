@@ -1,8 +1,7 @@
-import { cn } from '@/lib/utils';
-
+import { ThemeToggle } from '../ThemeToggle';
 import { MobileSidebar } from './MobileSidebar';
 import { UserNav } from './UserNav';
-import { ThemeToggle } from '../ThemeToggle';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   return (

@@ -1,5 +1,6 @@
-import reducers, { defaultState } from './appReducer';
 import { createSlice } from '@reduxjs/toolkit';
+
+import reducers, { defaultState } from './appReducer';
 
 const { actions, reducer } = createSlice({
   name: 'app',

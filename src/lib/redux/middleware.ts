@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { UnknownAction, MiddlewareAPI } from '@reduxjs/toolkit';
+import type { MiddlewareAPI, UnknownAction } from '@reduxjs/toolkit';
 import { isRejected, isRejectedWithValue } from '@reduxjs/toolkit';
+
 import { isPayloadErrorMessage } from './helpers';
 
 export const rtkQueryErrorLogger =

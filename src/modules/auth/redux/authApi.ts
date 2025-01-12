@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ActionReducerMapBuilder } from '@reduxjs/toolkit';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { set } from 'lodash';
+
 import constants from '@/constants';
 import { axiosBaseQuery } from '@/lib';
-import { createApi } from '@reduxjs/toolkit/query/react';
 
 export const authApi = createApi({
   reducerPath: 'authApi',

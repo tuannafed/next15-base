@@ -2,10 +2,10 @@
 
 import { AuthError } from 'next-auth';
 
-import { signIn } from '@/auth';
-import { DEFAULT_LOGIN_REDIRECT } from '@/routes';
 import type { TLoginReq } from '../schemas/login/request';
 import { LoginReqSchema } from '../schemas/login/request';
+import { signIn } from '@/auth';
+import { DEFAULT_LOGIN_REDIRECT } from '@/routes';
 
 export const login = async (values: TLoginReq, callbackUrl?: string | null) => {
   const validatedFields = LoginReqSchema.safeParse(values);

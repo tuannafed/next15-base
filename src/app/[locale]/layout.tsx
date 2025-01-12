@@ -1,10 +1,11 @@
-import './globals.css';
+import { Poppins } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Poppins } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components';
 import NextTopLoader from 'nextjs-toploader';
+
+import './globals.css';
+import { ThemeProvider } from '@/components';
+import { cn } from '@/lib/utils';
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] });
 

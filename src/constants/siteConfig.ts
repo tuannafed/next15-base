@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import constants from '@/constants';
 
 const metadata: Metadata = {

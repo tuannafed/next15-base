@@ -1,5 +1,9 @@
 import * as React from 'react';
+import { Fragment } from 'react';
 
+import { isEmpty } from 'lodash';
+
+import type { NavItemProps } from './NavMain';
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -8,9 +12,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components';
-import type { NavItemProps } from './NavMain';
-import { isEmpty } from 'lodash';
-import { Fragment } from 'react';
 
 export interface NavItemGroupProps {
   title: string;

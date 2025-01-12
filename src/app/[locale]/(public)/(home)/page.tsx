@@ -1,7 +1,9 @@
-import { getTranslations } from 'next-intl/server';
-import { DEFAULT_LOCATE } from '@/i18n/routing';
-import { GuestHeader } from '@/components/shared/Header/GuestHeader';
 import { Fragment } from 'react';
+
+import { getTranslations } from 'next-intl/server';
+
+import { GuestHeader } from '@/components/shared/Header/GuestHeader';
+import { DEFAULT_LOCATE } from '@/i18n/routing';
 import { HomeContainer } from '@/modules/app';
 
 export async function generateMetadata() {

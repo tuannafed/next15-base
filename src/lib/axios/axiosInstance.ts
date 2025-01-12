@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import constants from '@/constants';
 import type {
   AxiosError,
   AxiosInstance as AxiosInstanceType,
@@ -9,8 +8,9 @@ import type {
   AxiosResponse,
 } from 'axios';
 import axios from 'axios';
-
 import { getSession } from 'next-auth/react';
+
+import constants from '@/constants';
 
 interface AdaptAxiosRequestConfig extends AxiosRequestConfig {
   headers: AxiosRequestHeaders;

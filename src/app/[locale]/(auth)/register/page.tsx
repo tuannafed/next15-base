@@ -1,11 +1,15 @@
-import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
+import { DEFAULT_LOCATE } from '@/i18n/routing';
 import { RegisterForm } from '@/modules/auth';
 
-export const metadata: Metadata = {
-  title: 'Register new account',
-  description: 'Register new account',
-};
+export async function generateMetadata() {
+  const t = await getTranslations<string>({ locale: DEFAULT_LOCATE, namespace: 'Common.metadata' });
+
+  return {
+    title: t('template', { page: t('registerTitle') }),
+  };
+}
 
 export default function Index() {
   return (

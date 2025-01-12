@@ -1,10 +1,11 @@
 'use client';
 
-import { AuthProvider } from '@/components';
-import { store } from '@/stores';
 import 'dayjs/locale/ja';
 
 import { Provider as ReduxProvider } from 'react-redux';
+
+import { AuthProvider } from '@/components';
+import { store } from '@/stores';
 
 interface Props extends React.PropsWithChildren {}
 

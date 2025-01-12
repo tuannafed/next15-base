@@ -1,6 +1,7 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 import { userProfileBuilder } from './authApi';
 import reducers, { defaultState } from './authReducer';
-import { createSlice } from '@reduxjs/toolkit';
 
 const { actions, reducer } = createSlice({
   name: 'auth',

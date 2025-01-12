@@ -1,5 +1,11 @@
 import * as React from 'react';
 
+import { Command } from 'lucide-react';
+import Link from 'next/link';
+
+import { DATA_MENU, DATA_MENU_GROUP, DATA_USER } from './data';
+import { NavGroup } from './NavGroup';
+import { NavMain } from './NavMain';
 import {
   Sidebar,
   SidebarContent,
@@ -10,13 +16,8 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from '@/components';
-import { Command } from 'lucide-react';
-import { DATA_USER, DATA_MENU_GROUP, DATA_MENU } from './data';
-import { NavMain } from './NavMain';
-import { NavGroup } from './NavGroup';
 import { NavUser } from '@/components/shared/AppSidebar/NavUser';
 import constants from '@/constants';
-import Link from 'next/link';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

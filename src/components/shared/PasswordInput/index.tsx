@@ -1,8 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { cn } from '@/lib';
+
 import { Icons } from '@/components';
+import { cn } from '@/lib';
 
 export interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 

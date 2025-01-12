@@ -1,8 +1,10 @@
-import constants from '@/constants';
-import { axiosService } from '@/lib';
 import type { NextAuthConfig } from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
+
+import constants from '@/constants';
+import { LoginResSchema } from '@/modules/auth/schemas/login/response';
+import { fetcher } from '@/utils/fetcher';
 
 const authConfig = {
   providers: [
@@ -19,12 +21,14 @@ const authConfig = {
       authorize: async (credentials) => {
         if (!credentials.username || !credentials.password) return null;
 
-        const url = constants.shared.API.BASE_URL + constants.routeApis.AUTH.LOGIN;
-
-        const response = await axiosService({
-          url,
-          method: constants.shared.API_REQUEST_METHODS.POST,
-          data: {
+        const response = await fetcher({
+          apiConfig: {
+            endPoint: constants.routeApis.AUTH.LOGIN,
+            key: ['auth-login'],
+            method: constants.shared.API_REQUEST_METHODS.POST,
+          },
+          responseSchema: LoginResSchema,
+          payload: {
             username: credentials.username,
             password: credentials.password,
             expiresInMins: 30,

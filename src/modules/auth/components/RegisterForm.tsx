@@ -1,13 +1,16 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
 import { useTransition } from 'react';
+
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
+import type { TRegisterReq } from '../schemas/register/request';
+import { RegisterReqSchema } from '../schemas/register/request';
 import {
-  Form,
   AuthCard,
   Button,
+  Form,
   FormControl,
   FormField,
   FormItem,
@@ -17,8 +20,6 @@ import {
   PageContainer,
   PasswordInput,
 } from '@/components';
-import type { TRegisterReq } from '../schemas/register/request';
-import { RegisterReqSchema } from '../schemas/register/request';
 
 export function RegisterForm() {
   const [isPending, startTransition] = useTransition();
@@ -36,7 +37,6 @@ export function RegisterForm() {
 
   const onSubmit = async (data: TRegisterReq) => {
     startTransition(() => {
-      // TODO: Implement signup logic
       // eslint-disable-next-line no-console
       console.log('data', data);
       // handleSignup(data);

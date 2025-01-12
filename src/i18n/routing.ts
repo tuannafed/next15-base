@@ -1,5 +1,5 @@
-import { defineRouting } from 'next-intl/routing';
 import { createNavigation } from 'next-intl/navigation';
+import { defineRouting } from 'next-intl/routing';
 
 export const LANGUAGE_CODE_EN = 'en';
 export const LANGUAGE_CODE_DATE_EN = 'en';
