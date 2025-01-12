@@ -1,5 +1,7 @@
 'use client';
 
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
+
 import type { ColumnDef, PaginationState } from '@tanstack/react-table';
 import {
   flexRender,
@@ -9,7 +11,6 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { Fragment, useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -29,10 +30,11 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { cn } from '@/lib/utils';
 import constants from '@/constants';
-import { Icons, Loader } from '..';
+import { cn } from '@/lib/utils';
 import type { TPagination } from '@/schemas';
+
+import { Icons, Loader } from '..';
 
 interface ReactTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

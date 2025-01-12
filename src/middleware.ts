@@ -3,9 +3,9 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-import { AUTH_ROUTES, DEFAULT_LOGIN_REDIRECT, PUBLIC_ROUTES } from '@/routes';
-import { locales, routing } from '@/i18n/routing';
 import { auth } from '@/auth';
+import { locales, routing } from '@/i18n/routing';
+import { AUTH_ROUTES, DEFAULT_LOGIN_REDIRECT, PUBLIC_ROUTES } from '@/routes';
 
 const testPathnameRegex = (pages: string[], pathName: string): boolean => {
   return RegExp(

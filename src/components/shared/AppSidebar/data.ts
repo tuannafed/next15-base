@@ -1,7 +1,8 @@
-import constants from '@/constants';
+import { LayoutDashboard, Settings, Users } from 'lucide-react';
+
 import type { NavItemGroupProps } from './NavGroup';
 import type { NavItemProps } from './NavMain';
-import { LayoutDashboard, Users, Settings } from 'lucide-react';
+import constants from '@/constants';
 
 export const DATA_MENU: NavItemProps[] = [
   {

@@ -1,16 +1,17 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useMemo } from 'react';
 
+import Link from 'next/link';
+
+import type { NavItem } from './types';
 import { Icons } from '@/components';
+import { SidebarNav } from '@/components/shared/Sidebar/SidebarNav';
+import constants from '@/constants';
 import { useCurrentRole } from '@/hooks';
 import { cn } from '@/lib';
-import type { NavItem } from './types';
-import constants from '@/constants';
-import { appActions, useSelectorAppStore } from '@/modules/app';
 import { useAppDispatch } from '@/lib/redux/hooks';
-import { SidebarNav } from '@/components/shared/Sidebar/SidebarNav';
+import { appActions, useSelectorAppStore } from '@/modules/app';
 
 export const navItems: NavItem[] = [
   {

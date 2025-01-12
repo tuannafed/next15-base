@@ -1,6 +1,6 @@
-import shared from './shared';
-import routePages from './routePages';
 import routeApis from './routeApis';
+import routePages from './routePages';
+import shared from './shared';
 
 interface IConstants {
   shared: typeof shared;
@@ -13,5 +13,7 @@ const constants: IConstants = {
   routePages,
   routeApis,
 };
+
+export * from './httpCode';
 
 export default constants;

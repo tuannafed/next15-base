@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { isEmpty } from 'lodash';
+
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -7,7 +9,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components';
-import { isEmpty } from 'lodash';
 
 export interface NavItemProps {
   title: string;

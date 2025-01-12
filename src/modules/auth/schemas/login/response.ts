@@ -1,17 +1,21 @@
-import { Response } from '@/schemas';
 import { z } from 'zod';
 
-const LoginResSchema = z.object({
-  access_token: z.string(),
-  access_token_type: z.string().default('Bearer'),
-  access_token_expire_time: z.number(),
-  refresh_token: z.string(),
-  refresh_token_type: z.string().default('Bearer'),
-  refresh_token_expire_time: z.number(),
+import { Response } from '@/schemas';
+
+const LoginSchema = z.object({
+  accessToken: z.string(),
+  refreshToken: z.string(),
+  id: z.number(),
+  username: z.string(),
+  email: z.string().email(),
+  firstName: z.string(),
+  lastName: z.string(),
+  gender: z.enum(['male', 'female', 'other']),
+  image: z.string().url(),
 });
 
-export const LoginRes = Response.extend({
-  data: LoginResSchema.nullable(),
+export const LoginResSchema = Response.extend({
+  data: LoginSchema.nullable(),
 });
 
-export type TLoginRes = z.infer<typeof LoginResSchema>;
+export type TLoginRes = z.infer<typeof LoginSchema>;

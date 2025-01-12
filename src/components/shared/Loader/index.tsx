@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/lib/utils';
+
 import { Icons } from '@/components';
+import { cn } from '@/lib/utils';
 
 interface ILoaderProps {
   classNames?: string;

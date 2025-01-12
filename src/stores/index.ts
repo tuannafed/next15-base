@@ -3,8 +3,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import constants from '@/constants';
 import { rtkQueryErrorLogger } from '@/lib';
-import { authApi, authReducer } from '@/modules/auth';
 import { appReducer } from '@/modules/app/redux';
+import { authApi, authReducer } from '@/modules/auth';
 
 export const rootReducer = combineReducers({
   app: appReducer,

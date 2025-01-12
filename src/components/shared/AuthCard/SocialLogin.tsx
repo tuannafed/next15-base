@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
+
 import { Button, Icons } from '@/components';
 
 export function SocialLogin() {

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+
+import { Icons, Sheet, SheetContent, SheetTrigger } from '@/components';
 import { navItems } from '@/components/shared/Sidebar';
 import { SidebarNav } from '@/components/shared/Sidebar/SidebarNav';
-import { Icons, Sheet, SheetContent, SheetTrigger } from '@/components';
 
 export function MobileSidebar() {
   const [open, setOpen] = useState(false);

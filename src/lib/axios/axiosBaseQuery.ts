@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import { axiosInstance } from './axiosInstance';
 import constants from '@/constants';
 

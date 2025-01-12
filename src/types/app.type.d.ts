@@ -8,7 +8,8 @@ type TRowAction = 'edit' | 'detail' | 'create' | 'delete' | 'cancel';
 
 type TDate = string | number | Date;
 type TAPIConfig = {
-  url: string;
+  endPoint: string;
+  key: string[];
   method: TMethod;
   accessToken?: boolean;
 };

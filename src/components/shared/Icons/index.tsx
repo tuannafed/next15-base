@@ -1,21 +1,22 @@
-import { Github } from './Github';
 import type { LucideIcon } from 'lucide-react';
 import {
   ChevronLeft,
-  ChevronsLeft,
   ChevronRight,
+  ChevronsLeft,
   ChevronsRight,
+  Eye,
+  EyeOff,
   LayoutDashboard,
   Loader,
   MenuIcon,
-  ShieldCheck,
   Moon,
-  Eye,
-  EyeOff,
+  PanelLeft,
+  ShieldCheck,
   Sun,
   Users,
-  PanelLeft,
 } from 'lucide-react';
+
+import { Github } from './Github';
 
 export type Icon = LucideIcon;
 

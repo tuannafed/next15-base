@@ -1,6 +1,7 @@
+import { getTranslations } from 'next-intl/server';
+
 import { DEFAULT_LOCATE } from '@/i18n/routing';
 import { NotFoundPage } from '@/modules/notFound';
-import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   const t = await getTranslations<string>({ locale: DEFAULT_LOCATE, namespace: 'Common.metadata' });

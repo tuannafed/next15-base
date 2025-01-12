@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { EntityError } from './types';
 import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+
+import type { EntityError } from './types';
 
 /**
  * Checks if the given error is an instance of FetchBaseQueryError.

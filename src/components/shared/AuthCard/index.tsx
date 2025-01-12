@@ -1,10 +1,9 @@
 'use client';
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui';
 import { AuthCardHeader } from './AuthCardHeader';
-
 import { BackButton } from './BackButton';
 import { SocialLogin } from './SocialLogin';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui';
 
 interface IAuthCardProps {
   children: React.ReactNode;

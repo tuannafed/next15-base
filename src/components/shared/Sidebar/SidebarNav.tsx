@@ -4,10 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Dispatch, SetStateAction } from 'react';
 
-import { cn } from '@/lib/utils';
-
-import { Icons, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components';
 import type { NavItem } from './types';
+import { Icons, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components';
+import { cn } from '@/lib/utils';
 import { useSelectorAppStore } from '@/modules/app';
 
 interface ISidebarNavProps {

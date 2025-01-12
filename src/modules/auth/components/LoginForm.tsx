@@ -1,11 +1,14 @@
 'use client';
 
+import { useTransition } from 'react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 
+import type { TLoginReq } from '../schemas/login/request';
+import { LoginReqSchema } from '../schemas/login/request';
 import { AuthCard, PasswordInput } from '@/components';
 import { Button } from '@/components/ui/button';
 import {
@@ -19,8 +22,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { login } from '@/modules/auth/actions/login';
 import { DEFAULT_LOGIN_REDIRECT } from '@/routes';
-import type { TLoginReq } from '../schemas/login/request';
-import { LoginReqSchema } from '../schemas/login/request';
 
 export function LoginForm() {
   const searchParams = useSearchParams();

@@ -1,5 +1,6 @@
-import { Response } from '@/schemas';
 import { z } from 'zod';
+
+import { Response } from '@/schemas';
 
 const RegisterResSchema = z.object({});
 

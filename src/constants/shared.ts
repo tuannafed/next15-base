@@ -13,7 +13,7 @@ const shared = {
       'TailwindCSS',
       'Shadcn',
     ],
-    URL: process.env.NEXT_PUBLIC_APP_URL || '',
+    URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
     LOADING: 'app-loading',
     TIME_ZONE: process.env.TIME_ZONE || 'UTC',
   },
