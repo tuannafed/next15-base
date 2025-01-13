@@ -21,7 +21,20 @@
     },
     "menu": {},
     "pagination": {},
-    "button": {}
+    "button": {
+      "submit": "送信",
+      "cancel": "キャンセル",
+      "save": "保存",
+      "delete": "削除"
+    }
+  },
+  "ErrorPage": {
+    "title": "おっと！何かがおかしい",
+    "description": "お探しのページは削除された可能性があります、または一時的に利用できない状態にあるかもしれません。",
+    "button": {
+      "back": "戻る",
+      "backToHome": "ホームに戻る"
+    }
   },
   "HomePage": {
     "title": "ホーム",

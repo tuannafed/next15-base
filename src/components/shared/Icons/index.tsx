@@ -1,11 +1,14 @@
 import type { LucideIcon } from 'lucide-react';
 import {
+  AlertTriangle,
+  Check,
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
   Eye,
   EyeOff,
+  Info,
   LayoutDashboard,
   Loader,
   LogInIcon,
@@ -15,6 +18,7 @@ import {
   ShieldCheck,
   Sun,
   Users,
+  X,
 } from 'lucide-react';
 
 import { Github } from './Github';
@@ -39,5 +43,9 @@ export const Icons = {
   panelLeft: PanelLeft,
   eye: Eye,
   eyeOff: EyeOff,
+  check: Check,
+  alertTriangle: AlertTriangle,
+  info: Info,
+  x: X,
   gitHub: Github,
 };

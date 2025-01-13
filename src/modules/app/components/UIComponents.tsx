@@ -1,4 +1,3 @@
-import { ComponentSection } from './ComponentSection';
 import {
   Alert,
   AlertDescription,
@@ -88,12 +87,18 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/';
+} from '@/components';
+import { ComponentSection } from '@/modules/app';
 
-export function ComponentContent() {
+export default function UIComponents() {
   return (
-    <main className="flex-grow">
-      <div className="container mx-auto p-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>UI Components</CardTitle>
+        <CardDescription>Examples of our reusable UI components</CardDescription>
+      </CardHeader>
+      <CardContent>
+        {/* Alerts */}
         <ComponentSection title="Alert Dialog">
           <AlertDialog>
             <AlertDialogTrigger asChild>
@@ -115,6 +120,9 @@ export function ComponentContent() {
           </AlertDialog>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
+        {/* Avatar */}
         <ComponentSection title="Alert">
           <Alert>
             <AlertTitle>Heads up!</AlertTitle>
@@ -122,6 +130,9 @@ export function ComponentContent() {
           </Alert>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
+        {/* Avatar */}
         <ComponentSection title="Avatar">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -129,10 +140,34 @@ export function ComponentContent() {
           </Avatar>
         </ComponentSection>
 
-        <ComponentSection title="Badge">
-          <Badge>Badge</Badge>
+        <Separator className="my-8" />
+
+        {/* Buttons */}
+        <ComponentSection title="Buttons">
+          <div className="flex flex-wrap gap-4">
+            <Button variant="default">Default</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="link">Link</Button>
+          </div>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
+        {/* Badges */}
+        <ComponentSection title="Badges">
+          <div className="flex flex-wrap gap-4">
+            <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="outline">Outline</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+          </div>
+        </ComponentSection>
+
+        <Separator className="my-8" />
+
+        {/* Breadcrumb */}
         <ComponentSection title="Breadcrumb">
           <Breadcrumb>
             <BreadcrumbList>
@@ -151,16 +186,7 @@ export function ComponentContent() {
           </Breadcrumb>
         </ComponentSection>
 
-        <ComponentSection title="Buttons">
-          <div className="flex flex-wrap gap-4">
-            <Button variant="default">Default</Button>
-            <Button variant="destructive">Destructive</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="link">Link</Button>
-          </div>
-        </ComponentSection>
+        <Separator className="my-8" />
 
         <ComponentSection title="Card">
           <Card className="w-[350px]">
@@ -185,12 +211,7 @@ export function ComponentContent() {
           </Card>
         </ComponentSection>
 
-        <ComponentSection title="Checkbox">
-          <div className="flex items-center space-x-2">
-            <Checkbox id="terms" />
-            <Label htmlFor="terms">Accept terms and conditions</Label>
-          </div>
-        </ComponentSection>
+        <Separator className="my-8" />
 
         <ComponentSection title="Dialog">
           <Dialog>
@@ -209,6 +230,8 @@ export function ComponentContent() {
           </Dialog>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Dropdown Menu">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -223,6 +246,8 @@ export function ComponentContent() {
           </DropdownMenu>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Hover Card">
           <HoverCard>
             <HoverCardTrigger asChild>
@@ -234,9 +259,13 @@ export function ComponentContent() {
           </HoverCard>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Input">
           <Input type="text" placeholder="Type something..." />
         </ComponentSection>
+
+        <Separator className="my-8" />
 
         <ComponentSection title="Pagination">
           <Pagination>
@@ -265,6 +294,8 @@ export function ComponentContent() {
           </Pagination>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Popover">
           <Popover>
             <PopoverTrigger asChild>
@@ -276,39 +307,21 @@ export function ComponentContent() {
           </Popover>
         </ComponentSection>
 
-        <ComponentSection title="Radio Group">
-          <RadioGroup defaultValue="option-one">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-one" id="option-one" />
-              <Label htmlFor="option-one">Option One</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-two" id="option-two" />
-              <Label htmlFor="option-two">Option Two</Label>
-            </div>
-          </RadioGroup>
-        </ComponentSection>
+        <Separator className="my-8" />
 
         <ComponentSection title="Scroll Area">
           <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
             Jokester began sneaking into the castle in the middle of the night and leaving jokes all
             over the place: under the king&apos;s pillow, in his soup, even in the royal toilet. The
-            king was furious, but he couldn&apos;t seem to stop Jokester, no matter what he tried...
+            king was furious, but he couldn&apos;t seem to stop Jokester, no matter what he tried.
+            Jokester began sneaking into the castle in the middle of the night and leaving jokes all
+            over the place: under the king&apos;s pillow, in his soup, even in the royal toilet. The
+            king was furious, but he couldn&apos;t seem to stop Jokester, no matter what he
+            tried.dis..
           </ScrollArea>
         </ComponentSection>
 
-        <ComponentSection title="Select">
-          <Select>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Select a fruit" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="orange">Orange</SelectItem>
-            </SelectContent>
-          </Select>
-        </ComponentSection>
+        <Separator className="my-8" />
 
         <ComponentSection title="Separator">
           <div>
@@ -327,6 +340,8 @@ export function ComponentContent() {
           </div>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Sheet">
           <Sheet>
             <SheetTrigger asChild>
@@ -344,6 +359,8 @@ export function ComponentContent() {
           </Sheet>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Skeleton">
           <div className="flex items-center space-x-4">
             <Skeleton className="h-12 w-12 rounded-full" />
@@ -354,12 +371,7 @@ export function ComponentContent() {
           </div>
         </ComponentSection>
 
-        <ComponentSection title="Switch">
-          <div className="flex items-center space-x-2">
-            <Switch id="airplane-mode" />
-            <Label htmlFor="airplane-mode">Airplane Mode</Label>
-          </div>
-        </ComponentSection>
+        <Separator className="my-8" />
 
         <ComponentSection title="Table">
           <Table>
@@ -383,6 +395,8 @@ export function ComponentContent() {
           </Table>
         </ComponentSection>
 
+        <Separator className="my-8" />
+
         <ComponentSection title="Tabs">
           <Tabs defaultValue="account" className="w-[400px]">
             <TabsList>
@@ -394,10 +408,9 @@ export function ComponentContent() {
           </Tabs>
         </ComponentSection>
 
-        <ComponentSection title="Textarea">
-          <Textarea placeholder="Type your message here." />
-        </ComponentSection>
+        <Separator className="my-8" />
 
+        {/* Tooltip */}
         <ComponentSection title="Tooltip">
           <TooltipProvider>
             <Tooltip>
@@ -410,7 +423,82 @@ export function ComponentContent() {
             </Tooltip>
           </TooltipProvider>
         </ComponentSection>
-      </div>
-    </main>
+        <Separator className="my-8" />
+        {/* Form Elements */}
+        <ComponentSection title="Form Elements">
+          <Card>
+            <CardHeader>
+              <CardTitle>Full Form Example</CardTitle>
+              <CardDescription>A comprehensive form showcasing various input types</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form>
+                <div className="grid gap-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="full-name">Full Name</Label>
+                    <Input id="full-name" placeholder="John Doe" />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input type="email" id="email" placeholder="johndoe@example.com" />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password">Password</Label>
+                    <Input type="password" id="password" />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="country">Country</Label>
+                    <Select>
+                      <SelectTrigger id="country">
+                        <SelectValue placeholder="Select a country" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="us">United States</SelectItem>
+                        <SelectItem value="ca">Canada</SelectItem>
+                        <SelectItem value="uk">United Kingdom</SelectItem>
+                        <SelectItem value="au">Australia</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="bio">Bio</Label>
+                    <Textarea id="bio" placeholder="Tell us about yourself" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="marketing" />
+                    <Label htmlFor="marketing">Receive marketing emails</Label>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Preferred contact method</Label>
+                    <RadioGroup defaultValue="email">
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="email" id="contact-email" />
+                        <Label htmlFor="contact-email">Email</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="phone" id="contact-phone" />
+                        <Label htmlFor="contact-phone">Phone</Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="terms" />
+                    <label
+                      htmlFor="terms"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Accept terms and conditions
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Submit</Button>
+            </CardFooter>
+          </Card>
+        </ComponentSection>
+      </CardContent>
+    </Card>
   );
 }

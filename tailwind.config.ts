@@ -1,4 +1,3 @@
-import { info } from 'console';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -31,6 +30,10 @@ export default {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+        },
+        'primary-red': {
+          DEFAULT: 'hsl(var(--primary-red))',
+          foreground: 'hsl(var(--primary-red-foreground))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -68,14 +71,22 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        warning: 'hsl(var(--warning))',
-        'warning-foreground': 'hsl(var(--warning-foreground))',
-        success: 'hsl(var(--success))',
-        'success-foreground': 'hsl(var(--success-foreground))',
-        error: 'hsl(var(--error))',
-        'error-foreground': 'hsl(var(--error-foreground))',
-        info: 'hsl(var(--info))',
-        'info-foreground': 'hsl(var(--info-foreground))',
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+        },
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          foreground: 'hsl(var(--info-foreground))',
+        },
+        error: {
+          DEFAULT: 'hsl(var(--error))',
+          foreground: 'hsl(var(--error-foreground))',
+        },
         gray: {
           '100': '#EFEEE9',
           '200': '#F2F2F2',
@@ -95,9 +106,141 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      spacing: {},
+      spacing: {
+        '0.5': '0.125rem',
+        '1': '0.25rem',
+        '1.5': '0.375rem',
+        '2': '0.5rem',
+        '2.5': '0.625rem',
+        '3': '0.75rem',
+        '3.5': '0.875rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        '6': '1.5rem',
+        '7': '1.75rem',
+        '8': '2rem',
+        '9': '2.25rem',
+        '10': '2.5rem',
+        '11': '2.75rem',
+        '12': '3rem',
+        '14': '3.5rem',
+        '16': '4rem',
+        '20': '5rem',
+        '24': '6rem',
+        '28': '7rem',
+        '32': '8rem',
+        '36': '9rem',
+        '40': '10rem',
+        '44': '11rem',
+        '48': '12rem',
+        '52': '13rem',
+        '56': '14rem',
+        '60': '15rem',
+        '64': '16rem',
+        '72': '18rem',
+        '80': '20rem',
+        '96': '24rem',
+      },
+      lineHeight: {
+        h1: '112px',
+        h2: '72px',
+        h3: '56px',
+        h4: '42px',
+        h5: '32px',
+        h6: '32px',
+        subtitle1: '28px',
+        subtitle2: '21px',
+        body1: '24px',
+        body2: '21px',
+        caption: '14px',
+        overline: '14px',
+      },
+      fontSize: {
+        h1: ['96px', { lineHeight: '112px', fontWeight: '300' }],
+        h2: ['60px', { lineHeight: '72px', fontWeight: '300' }],
+        h3: ['48px', { lineHeight: '56px', fontWeight: '400' }],
+        h4: ['34px', { lineHeight: '42px', fontWeight: '400' }],
+        h5: ['24px', { lineHeight: '32px', fontWeight: '400' }],
+        h6: ['20px', { lineHeight: '32px', fontWeight: '500' }],
+        subtitle1: ['16px', { lineHeight: '28px', fontWeight: '400' }],
+        subtitle2: ['14px', { lineHeight: '21px', fontWeight: '500' }],
+        body1: ['14px', { lineHeight: '24px', fontWeight: '400' }],
+        body2: ['14px', { lineHeight: '21px', fontWeight: '400' }],
+        caption: ['12px', { lineHeight: '14px', fontWeight: '400' }],
+        overline: ['12px', { lineHeight: '14px', fontWeight: '400' }],
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addComponents, theme }: any) {
+      const fontSize = theme('fontSize');
+
+      addComponents({
+        '.heading-1': {
+          fontSize: fontSize.h1[0], // Access the font size (96px)
+          lineHeight: fontSize.h1[1].lineHeight, // Access the line height (112px)
+          fontWeight: fontSize.h1[1].fontWeight, // Access the font weight (300)
+        },
+        '.heading-2': {
+          fontSize: fontSize.h2[0], // Access the font size (60px)
+          lineHeight: fontSize.h2[1].lineHeight, // Access the line height (72px)
+          fontWeight: fontSize.h2[1].fontWeight, // Access the font weight (300)
+        },
+        '.heading-3': {
+          fontSize: fontSize.h3[0], // Access the font size (48px)
+          lineHeight: fontSize.h3[1].lineHeight, // Access the line height (56px)
+          fontWeight: fontSize.h3[1].fontWeight, // Access the font weight (400)
+        },
+        '.heading-4': {
+          fontSize: fontSize.h4[0], // Access the font size (34px)
+          lineHeight: fontSize.h4[1].lineHeight, // Access the line height (42px)
+          fontWeight: fontSize.h4[1].fontWeight, // Access the font weight (400)
+        },
+        '.heading-5': {
+          fontSize: fontSize.h5[0], // Access the font size (24px)
+          lineHeight: fontSize.h5[1].lineHeight, // Access the line height (32px)
+          fontWeight: fontSize.h5[1].fontWeight, // Access the font weight (400)
+        },
+        '.heading-6': {
+          fontSize: fontSize.h6[0], // Access the font size (20px)
+          lineHeight: fontSize.h6[1].lineHeight, // Access the line height (32px)
+          fontWeight: fontSize.h6[1].fontWeight, // Access the font weight (500)
+        },
+        '.subtitle-1': {
+          fontSize: fontSize.subtitle1[0], // Access the font size (16px)
+          lineHeight: fontSize.subtitle1[1].lineHeight, // Access the line height (28px)
+          fontWeight: fontSize.subtitle1[1].fontWeight, // Access the font weight (400)
+        },
+        '.subtitle-2': {
+          fontSize: fontSize.subtitle2[0], // Access the font size (14px)
+          lineHeight: fontSize.subtitle2[1].lineHeight, // Access the line height (21px)
+          fontWeight: fontSize.subtitle2[1].fontWeight, // Access the font weight (500)
+        },
+        '.body-1': {
+          fontSize: fontSize.body1[0], // Access the font size (14px)
+          lineHeight: fontSize.body1[1].lineHeight, // Access the line height (24px)
+          fontWeight: fontSize.body1[1].fontWeight, // Access the font weight (400)
+        },
+        '.body-2': {
+          fontSize: fontSize.body2[0], // Access the font size (14px)
+          lineHeight: fontSize.body2[1].lineHeight, // Access the line height (21px)
+          fontWeight: fontSize.body2[1].fontWeight, // Access the font weight (400)
+        },
+        '.caption': {
+          fontSize: fontSize.caption[0], // Access the font size (12px)
+          lineHeight: fontSize.caption[1].lineHeight, // Access the line height (14px)
+          fontWeight: fontSize.caption[1].fontWeight, // Access the font weight (400)
+        },
+        '.overline': {
+          fontSize: fontSize.overline[0], // Access the font size (12px)
+          lineHeight: fontSize.overline[1].lineHeight, // Access the line height (14px)
+          fontWeight: fontSize.overline[1].fontWeight, // Access the font weight (400)
+          textTransform: 'uppercase', // Access textTransform (uppercase)
+          textDecorationLine: 'none !important', // Access textDecoderation (underline)
+        },
+      });
+    },
+  ],
   corePlugins: {},
 } satisfies Config;

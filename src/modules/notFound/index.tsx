@@ -1,10 +1,12 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components';
 
 export function NotFoundPage() {
+  const t = useTranslations('ErrorPage');
   const router = useRouter();
 
   return (
@@ -13,14 +15,14 @@ export function NotFoundPage() {
         404
       </span>
 
-      <h2 className="font-heading my-2 text-2xl font-bold">Something&apos;s missing</h2>
-      <p>Sorry, the page you are looking for doesn&apos;t exist or has been moved.</p>
+      <h2 className="font-heading my-2 text-2xl font-bold">{t('title')}</h2>
+      <p>{t('description')}</p>
 
       <div className="mt-8 flex justify-center gap-2">
         <Button variant="secondary" onClick={() => router.back()}>
-          Go back
+          {t('button.back')}
         </Button>
-        <Button onClick={() => router.push('/dashboard')}>Back to Home</Button>
+        <Button onClick={() => router.push('/dashboard')}>{t('button.backToHome')}</Button>
       </div>
     </div>
   );
