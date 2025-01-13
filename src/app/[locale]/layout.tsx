@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
 
 import { ThemeProvider } from '@/components';
+import constants from '@/constants';
 import { cn } from '@/lib/utils';
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] });
@@ -21,7 +22,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   return (
     <html lang={locale}>
       <body className={cn(poppins.className)} suppressHydrationWarning={true}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} timeZone={constants.shared.APP.TIME_ZONE}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

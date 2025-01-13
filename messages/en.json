@@ -21,7 +21,20 @@
     },
     "menu": {},
     "pagination": {},
-    "button": {}
+    "button": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete"
+    }
+  },
+  "ErrorPage": {
+    "title": "Oops! Something went wrong",
+    "description": "The page you are looking for might have been removed or is temporarily unavailable.",
+    "button": {
+      "back": "Go back",
+      "backToHome": "Back to Home"
+    }
   },
   "HomePage": {
     "title": "Welcome to Our Component Library",

@@ -1,9 +1,7 @@
 const routePages = {
   public: {
     HOME_PAGE: '/',
-    DEMO_COMPONENT_UI: 'demo-component-ui',
-    DEMO_COMPONENT_SHARED: 'demo-component-shared',
-    DESIGN_SYTEM: 'design-system',
+    DESIGN_SYSTEM: '/design-system',
     ABOUT: '/about',
     TERMS_PAGE: '/terms',
     PRIVACY_PAGE: '/privacy',

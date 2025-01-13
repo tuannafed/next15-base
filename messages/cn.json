@@ -19,7 +19,20 @@
     },
     "menu": {},
     "pagination": {},
-    "button": {}
+    "button": {
+      "submit": "提交",
+      "cancel": "取消",
+      "save": "保存",
+      "delete": "删除"
+    }
+  },
+  "ErrorPage": {
+    "title": "糟糕！出错了",
+    "description": "您要查找的页面可能已被删除或暂时不可用",
+    "button": {
+      "back": "返回",
+      "backToHome": "返回首页"
+    }
   },
   "HomePage": {
     "title": "欢迎来到我们的组件库",
