@@ -1,0 +1,40 @@
+{
+  "Common": {
+    "metadata": {
+      "template": "{page}",
+      "notFoundTitle": "Page not found",
+      "loginTitle": "Login",
+      "homeTitle": "Home",
+      "dashboardTitle": "Dashboard",
+      "userTitle": "User",
+      "aboutTitle": "About"
+    },
+    "header": {
+      "back": "Back"
+    },
+    "footer": {
+      "copyRight": "Copyright",
+      "public": {
+        "description": "This is a public site",
+        "copyRight": "Copyright "
+      }
+    },
+    "menu": {},
+    "pagination": {},
+    "button": {}
+  },
+  "HomePage": {
+    "title": "Welcome to Our Component Library",
+    "description": " Explore our collection of beautiful and functional UI components",
+    "button": {
+      "getStarted": "View component library"
+    }
+  },
+  "AboutPage": {
+    "title": "About Us",
+    "description": "We are a team of developers who are passionate about creating beautiful and functional UI components. Our goal is to help you build amazing web applications that your users will love.",
+    "button": {
+      "learnMore": "Learn more"
+    }
+  }
+}

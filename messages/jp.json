@@ -1,0 +1,37 @@
+{
+  "Common": {
+    "metadata": {
+      "template": "{page} | アプリタイトル",
+      "notFoundTitle": "ページが見つかりません",
+      "loginTitle": "ログイン",
+      "homeTitle": "ホーム",
+      "dashboardTitle": "ダッシュボード",
+      "userTitle": "ユーザー",
+      "aboutTitle": "アバウト"
+    },
+    "header": {
+      "back": "戻る"
+    },
+    "footer": {
+      "copyRight": "著作権",
+      "public": {
+        "description": "これは公開サイトです",
+        "copyRight": "著作権"
+      }
+    },
+    "menu": {},
+    "pagination": {},
+    "button": {}
+  },
+  "HomePage": {
+    "title": "ホーム",
+    "description": "これはホームページです",
+    "button": {
+      "getStarted": "はじめる"
+    }
+  },
+  "AboutPage": {
+    "title": "アバウト",
+    "description": "これはアバウトページです"
+  }
+}

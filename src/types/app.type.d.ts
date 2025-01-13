@@ -11,7 +11,7 @@ type TAPIConfig = {
   endPoint: string;
   key: string[];
   method: TMethod;
-  accessToken?: boolean;
+  isAuthRequired?: boolean;
 };
 
 type TApiError<T = any> = {

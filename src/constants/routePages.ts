@@ -1,13 +1,25 @@
 const routePages = {
-  HOME_PAGE: '/',
-  LOGIN_PAGE: '/login',
-  REGISTER_PAGE: '/register',
-  FORGOT_PASSWORD_PAGE: '/forgot-password',
-  DASHBOARD_PAGE: '/dashboard',
-  USERS_PAGE: '/users',
-  SETTINGS_PAGE: '/settings',
-  TERMS_PAGE: '/terms',
-  PRIVACY_PAGE: '/privacy',
+  public: {
+    HOME_PAGE: '/',
+    DEMO_COMPONENT_UI: 'demo-component-ui',
+    DEMO_COMPONENT_SHARED: 'demo-component-shared',
+    DESIGN_SYTEM: 'design-system',
+    ABOUT: '/about',
+    TERMS_PAGE: '/terms',
+    PRIVACY_PAGE: '/privacy',
+  },
+  auth: {
+    LOGIN_PAGE: '/login',
+    REGISTER_PAGE: '/register',
+    FORGOT_PASSWORD_PAGE: '/forgot-password',
+    RESET_PASSWORD_PAGE: '/reset',
+    NEW_PASSWORD_PAGE: '/new-password',
+  },
+  private: {
+    DASHBOARD_PAGE: '/dashboard',
+    USERS_PAGE: '/users',
+    SETTINGS_PAGE: '/settings',
+  },
 } as const;
 
 export default routePages;

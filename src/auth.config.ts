@@ -26,6 +26,7 @@ const authConfig = {
             endPoint: constants.routeApis.AUTH.LOGIN,
             key: ['auth-login'],
             method: constants.shared.API_REQUEST_METHODS.POST,
+            isAuthRequired: false,
           },
           responseSchema: LoginResSchema,
           payload: {
@@ -68,6 +69,7 @@ const authConfig = {
       return session;
     },
   },
+  trustHost: true,
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/login',

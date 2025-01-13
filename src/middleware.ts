@@ -61,5 +61,5 @@ export default function middleware(req: NextRequest) {
 
 // Optionally, don't invoke Middleware on some paths
 export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)'],
+  matcher: ['/', '/(en|cn|jp)/:path*', '/((?!api|_next|.*\\..*).*)'],
 };

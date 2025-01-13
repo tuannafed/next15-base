@@ -25,3 +25,11 @@ interface IUseHookBaseReturn<T = any, P extends IQueryParamsBase> {
 interface IEndPointParameter {
   [index: string]: string | number;
 }
+
+interface ISvgProps extends React.SVGProps<SVGSVGElement> {
+  fill?: string;
+  width?: number;
+  height?: number;
+  style: React.CSSProperties;
+  classname: TClassName;
+}

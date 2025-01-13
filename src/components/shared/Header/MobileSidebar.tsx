@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 import { Icons, Sheet, SheetContent, SheetTrigger } from '@/components';
-import { navItems } from '@/components/shared/Sidebar';
-import { SidebarNav } from '@/components/shared/Sidebar/SidebarNav';
+import { DATA_MENU } from '@/components/shared/AppSidebar/data';
+import { NavMain } from '@/components/shared/AppSidebar/NavMain';
 
 export function MobileSidebar() {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ export function MobileSidebar() {
             <div className="px-3 py-2">
               <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">Overview</h2>
               <div className="space-y-1">
-                <SidebarNav items={navItems} isMobileNav={true} setOpen={setOpen} />
+                <NavMain data={DATA_MENU} />
               </div>
             </div>
           </div>

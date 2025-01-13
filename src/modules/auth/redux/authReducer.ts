@@ -1,4 +1,4 @@
-import type { TAuthInfo } from '@/modules/auth/schemas/auth/authInfoRes';
+import type { TAuthInfo } from '@/modules/auth';
 
 export interface IAuthState extends TBaseState {
   userInfo: TAuthInfo;

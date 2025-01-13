@@ -8,7 +8,6 @@ import {
 import constants, { HTTP_STATUS_AUTH_FAILED, HTTP_STATUS_CODE } from '@/constants';
 import type { TResponse } from '@/schemas';
 import utils from '@/utils';
-
 export type FetcherProps<
   TRequestSchema extends ZodTypeAny,
   TResponseSchema extends ZodType<TResponse>,
@@ -40,7 +39,7 @@ export async function fetcher<
     timeout,
   } = props;
 
-  const { endPoint, method, accessToken: isAuthRequired = false } = apiConfig;
+  const { endPoint, method, isAuthRequired = false } = apiConfig;
   // Validate request data if provided
   if (requestSchema && payload) {
     const validationResult = requestSchema.safeParse(payload);
@@ -91,17 +90,18 @@ export async function fetcher<
     // Refresh token if 401 Unauthorized
     if (HTTP_STATUS_AUTH_FAILED.includes(response.status) === true && refreshToken) {
       const newAccessToken = await refreshAccessToken(refreshToken);
+
       if (newAccessToken) {
         return fetcher<TRequestSchema, TResponseSchema>(props);
       }
     }
 
-    if (!response.ok) {
+    if (response.status !== HTTP_STATUS_CODE.OK) {
       return responseSchema.parse({
         data: null,
         statusCode: response.status,
         success: response.ok,
-        errors: 'Failed to fetch data',
+        errors: response.statusText,
       });
     }
 
@@ -110,7 +110,7 @@ export async function fetcher<
     return responseSchema.parse({
       data,
       statusCode: response.status,
-      success: response.ok,
+      success: response.statusText === 'OK',
     });
   } catch (exception) {
     if (process.env.NODE_ENV === constants.shared.ENV.DEVELOPMENT) {

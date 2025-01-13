@@ -7,19 +7,19 @@ import constants from '@/constants';
 export const DATA_MENU: NavItemProps[] = [
   {
     title: 'Dashboard',
-    url: constants.routePages.DASHBOARD_PAGE,
+    url: constants.routePages.private.DASHBOARD_PAGE,
     icon: LayoutDashboard,
     isActive: true,
   },
   {
     title: 'Users',
-    url: constants.routePages.USERS_PAGE,
+    url: constants.routePages.private.USERS_PAGE,
     icon: Users,
     isActive: false,
   },
   {
     title: 'Settings',
-    url: constants.routePages.SETTINGS_PAGE,
+    url: constants.routePages.private.SETTINGS_PAGE,
     icon: Settings,
     isActive: false,
   },
