@@ -5,7 +5,7 @@ import { Response } from '@/schemas';
 const LoginSchema = z.object({
   accessToken: z.string(),
   refreshToken: z.string(),
-  id: z.number(),
+  id: z.number().or(z.string()),
   username: z.string(),
   email: z.string().email(),
   firstName: z.string(),

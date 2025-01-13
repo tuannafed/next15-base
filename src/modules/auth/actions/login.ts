@@ -16,17 +16,11 @@ export const login = async (values: TLoginReq, callbackUrl?: string | null) => {
   const { username, password } = validatedFields.data;
 
   try {
-    const response = await signIn('credentials', {
+    await signIn('credentials', {
       username,
       password,
       redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
     });
-
-    if (!response) {
-      return { error: 'Your credentials are invalid.' };
-    }
-
-    return response;
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

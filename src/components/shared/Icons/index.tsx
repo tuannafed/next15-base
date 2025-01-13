@@ -8,6 +8,7 @@ import {
   EyeOff,
   LayoutDashboard,
   Loader,
+  LogInIcon,
   MenuIcon,
   Moon,
   PanelLeft,
@@ -17,10 +18,12 @@ import {
 } from 'lucide-react';
 
 import { Github } from './Github';
+import { LogoSvg } from '@/components/shared/Icons/Logo';
 
 export type Icon = LucideIcon;
 
 export const Icons = {
+  logo: LogoSvg,
   chevronLeft: ChevronLeft,
   chevronsLeft: ChevronsLeft,
   chevronRight: ChevronRight,
@@ -29,6 +32,7 @@ export const Icons = {
   loader: Loader,
   menuIcon: MenuIcon,
   shieldCheck: ShieldCheck,
+  login: LogInIcon,
   users: Users,
   moon: Moon,
   sun: Sun,

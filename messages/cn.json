@@ -1,0 +1,35 @@
+{
+  "Common": {
+    "metadata": {
+      "template": "{page} | 应用标题",
+      "notFoundTitle": "页面未找到",
+      "loginTitle": "登录",
+      "homeTitle": "首页",
+      "aboutTitle": "关于"
+    },
+    "header": {
+      "back": "返回"
+    },
+    "footer": {
+      "copyRight": "版权所有",
+      "public": {
+        "description": "这是一个公共网站",
+        "copyRight": "版权所有"
+      }
+    },
+    "menu": {},
+    "pagination": {},
+    "button": {}
+  },
+  "HomePage": {
+    "title": "欢迎来到我们的组件库",
+    "description": "探索我们精美且实用的 UI 组件集合",
+    "button": {
+      "getStarted": "开始使用"
+    }
+  },
+  "AboutPage": {
+    "title": "关于我们",
+    "description": "我们是一个专业的团队，致力于为用户提供最好的体验"
+  }
+}

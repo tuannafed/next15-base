@@ -4,11 +4,14 @@ import { Response } from '@/schemas';
 
 export const AuthInfoResSchema = z.object({
   id: z.number(),
-  email: z.string(),
-  phone: z.string().nullish(),
-  username: z.string().nullish(),
-  name: z.string().nullish(),
-  status: z.number(),
+  accessToken: z.string(),
+  refreshToken: z.string(),
+  username: z.string(),
+  email: z.string().email(),
+  firstName: z.string(),
+  lastName: z.string(),
+  gender: z.enum(['male', 'female', 'other']),
+  image: z.string().url(),
 });
 
 export const AuthInfoRes = Response.extend({

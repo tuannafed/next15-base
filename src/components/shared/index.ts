@@ -5,6 +5,7 @@ export * from './Icons';
 export * from './Loader';
 export * from './modal';
 export * from './ReactTable';
+export * from './LanguageDropdown';
 export * from './PasswordInput';
 export * from './ThemeToggle';
 export * from './AuthProvider';

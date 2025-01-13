@@ -49,7 +49,7 @@ export function ErrorCard() {
   return (
     <AuthCard
       headerLabel="Oops! Something went wrong!"
-      backButtonHref={constants.routePages.LOGIN_PAGE}
+      backButtonHref={constants.routePages.auth.LOGIN_PAGE}
       backButtonLabel="Back to login"
     >
       <div className="w-full flex justify-center items-center">

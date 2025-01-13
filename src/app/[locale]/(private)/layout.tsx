@@ -1,7 +1,7 @@
 import { SessionProvider } from 'next-auth/react';
 
 import { auth } from '@/auth';
-import { AppProvider, AppSidebar, Header, SidebarInset, SidebarProvider } from '@/components';
+import { AdminHeader, AppProvider, AppSidebar, SidebarInset, SidebarProvider } from '@/components';
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
@@ -12,7 +12,7 @@ export default async function ProtectedLayout({ children }: { children: React.Re
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
-            <Header />
+            <AdminHeader />
             {children}
           </SidebarInset>
         </SidebarProvider>
