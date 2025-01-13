@@ -7,7 +7,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/privacy',
     },
     sitemap: `${constants.shared.APP.URL}/sitemap.xml`,
   };

@@ -13,9 +13,6 @@ module.exports = withBundleAnalyzer(
     reactStrictMode: true,
     trailingSlash: true,
     skipTrailingSlashRedirect: true,
-    devIndicators: {
-      appIsrStatus: false,
-    },
     experimental: {
       optimizePackageImports: ['lodash', 'dayjs', 'lucide-react'],
     },

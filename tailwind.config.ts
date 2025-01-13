@@ -1,3 +1,4 @@
+import { info } from 'console';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -14,30 +15,6 @@ export default {
       md: '768px',
       lg: '976px',
       xl: '1440px',
-    },
-    colors: {
-      primary: '#FF6847',
-      secondary: '#E0CFFD',
-      success: '#45B26B',
-      warning: '#c79920',
-      error: '#EF466F',
-      info: '#3772FF',
-      black: '#000000',
-      white: '#ffffff',
-      gray: {
-        '100': '#EFEEE9',
-        '200': '#F2F2F2',
-        '300': '#E0E0E0',
-        '400': '#E6E8EC',
-        '500': '#F4F5F6',
-        '600': '#B1B5C3',
-        '700': '#777E90',
-        '800': '#353945',
-        '900': '#23262F',
-        dark: '#141416',
-        light: '#FCFCFD',
-      },
-      transparent: 'transparent',
     },
     extend: {
       colors: {
@@ -93,6 +70,25 @@ export default {
         },
         warning: 'hsl(var(--warning))',
         'warning-foreground': 'hsl(var(--warning-foreground))',
+        success: 'hsl(var(--success))',
+        'success-foreground': 'hsl(var(--success-foreground))',
+        error: 'hsl(var(--error))',
+        'error-foreground': 'hsl(var(--error-foreground))',
+        info: 'hsl(var(--info))',
+        'info-foreground': 'hsl(var(--info-foreground))',
+        gray: {
+          '100': '#EFEEE9',
+          '200': '#F2F2F2',
+          '300': '#E0E0E0',
+          '400': '#E6E8EC',
+          '500': '#F4F5F6',
+          '600': '#B1B5C3',
+          '700': '#777E90',
+          '800': '#353945',
+          '900': '#23262F',
+          dark: '#141416',
+          light: '#FCFCFD',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
